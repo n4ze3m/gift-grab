@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/christmas-gift.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Grab</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="gameCanvas"></canvas>
+      <div id="scoreContainer">
+        <div id="score">Score: <span id="scoreValue">0</span></div>
+        <div id="highScoreDisplay">High Score: <span id="highScoreValue">0</span></div>
+        <div id="modeDisplay" class="hidden">Mode: <span id="modeValue">EASY</span></div>
+      </div>
+      <div id="combo" class="hidden">Combo x<span id="comboValue">0</span>!</div>
+      <div id="handPosition"></div>
+    </div>
+    <div id="menuOverlay" class="overlay">
+      <div class="menu-content">
+        <h1>Gift Grab</h1>
+        <p>Catch presents and avoid the Grinch!</p>
+        <button id="playButton" class="play-button">Play Game</button>
+        <p id="loadingText" style="display: none; color: #4CAF50; margin-top: 20px;">Loading hand tracking...</p>
+      </div>
+    </div>
+
+    <div id="gameOverOverlay" class="overlay hidden">
+      <div class="menu-content">
+        <h1>Game Over!</h1>
+        <p>The Grinch caught you!</p>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <button id="restartButton" class="play-button">Play Again</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
